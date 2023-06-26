@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="date" id="inp">
+    <button onclick="add()">click</button>
+    <h1 id="result">
+
+    </h1>
+    <script>
+    let inp=document.getElementById('inp');
+    let result=document.getElementById('result');
+    let btn=document.querySelector('button');
+    
+    function add(){
+        console.log(inp.value);
+    let date=new Date(inp.value);
+    let day=date.getDay();
+    let month=date.getMonth();
+    let year=date.getFullYear();
+    let task=new Date();
+    let tday=task.getDay();
+    let tmonth=task.getMonth();
+    let tyear=task.getFullYear();
+     
+    // console.log(date.getDate());
+    if( year < tyear || month === tmonth || day > 0){
+        let c=tyear-year;
+        result.innerHTML=`age${c}, month ${month},  ${day} days `;
+    }    
+}
+    </script>
+</body>
+</html>
